@@ -5,3 +5,7 @@
   .removed {
     background-color: lightcoral;
   }
+
+  .comparebtn {
+    margin-top: 10px;
+  }

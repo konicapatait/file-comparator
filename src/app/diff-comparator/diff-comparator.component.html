@@ -1,8 +1,15 @@
 <div>
     <h2>Text Comparison</h2>
-    <textarea [(ngModel)]="text1" placeholder="Enter first text" rows="5" cols="40"></textarea>
-    <textarea [(ngModel)]="text2" placeholder="Enter second text" rows="5" cols="40"></textarea>
-    <button (click)="compare()">Compare</button>
+    <div>
+        <input type="file" (change)="onFile1Selected($event)" />
+        <textarea [(ngModel)]="fileContent1" [value]="fileContent1" placeholder="Enter first text" rows="5" cols="40"></textarea>
+    </div>
+   
+    <div>
+    <input type="file" (change)="onFile2Selected($event)" />
+      <textarea [(ngModel)]="fileContent2" [value]="fileContent2" placeholder="Enter second text" rows="5" cols="40"></textarea>
+    </div>
+    <button class="comparebtn" (click)="compare()">Compare</button>
   
     <div *ngIf="diffs.length > 0">
       <h3>Comparison Result:</h3>
