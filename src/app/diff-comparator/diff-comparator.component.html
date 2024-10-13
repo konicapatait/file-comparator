@@ -1,0 +1,15 @@
+<div>
+    <h2>Text Comparison</h2>
+    <textarea [(ngModel)]="text1" placeholder="Enter first text" rows="5" cols="40"></textarea>
+    <textarea [(ngModel)]="text2" placeholder="Enter second text" rows="5" cols="40"></textarea>
+    <button (click)="compare()">Compare</button>
+  
+    <div *ngIf="diffs.length > 0">
+      <h3>Comparison Result:</h3>
+      <div *ngFor="let diff of diffs">
+        <span [ngClass]="{ added: diff[0] === 1, removed: diff[0] === -1 }">
+          {{ diff[1] }}
+        </span>
+      </div>
+    </div>
+  </div>
